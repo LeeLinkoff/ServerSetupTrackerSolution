@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>@ViewData["Title"] - ServerSetupTracker</title>
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap-select_1.13.9/bootstrap-select_1.13.9.min.css">
+    <link rel="stylesheet" href="~/css/site.css" />
+
+    <style>
+
+        .body-content {
+            margin-top: 90px;
+            padding-left: 15px;
+            padding-right: 15px;
+            background-color: #f2f2f2;
+            min-width: 1150px;
+            min-height:600px;
+            box-shadow: 5px 5px 10px rgba(0,0,0,.5), -5px 5px 10px rgba(0,0,0,.5); /*  <params>, <params> - gives us shadows on the left and right*/
+        }
+
+        .buttonClass {
+            font-size: 15px;
+            font-family: Arial;
+            border-width: 1px;
+            color: #000;
+            border-color: #84bbf3;
+            font-weight: bold;
+            border-top-left-radius: 6px;
+            border-top-right-radius: 6px;
+            border-bottom-left-radius: 6px;
+            border-bottom-right-radius: 6px;
+            box-shadow: inset 0px 1px 0px 0px #dcecfb;
+            text-shadow: inset 0px 1px 0px #528ecc;
+            background: linear-gradient(#bddbfa, #80b5ea);
+        }
+
+        .buttonClass:hover {
+            background: linear-gradient(#80b5ea, #bddbfa);
+        }
+
+        .table td {
+            font-size: small;
+            vertical-align: middle
+        }
+
+        .float-container {
+            padding: 20px;
+        }
+
+        .float-child1 {
+            width: 50%;
+            float: left;
+            padding: 20px;
+        }
+
+        .float-child2 {
+            float: left;
+            padding: 20px;
+            border: solid; 
+            width: 400px; 
+            margin-left: 20px; 
+            margin-top: 90px
+        }
+
+        table {
+            margin-top: 20px;
+            width: 300px;
+        }
+
+        .label-overdue {
+            padding: 0px;
+            margin: 0px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar navbar-inverse navbar-fixed-top box-shadow" style="margin-left: 0; background-color: #0a1c89; height: 100px; box-shadow: 5px 5px 10px rgba(0,0,0,.5);">
+            <div class="text-center" style="width: 2500px">
+                <a class="navbar-brand" style="color: white;" asp-area="" asp-controller="Home" asp-action="Index">Server Setup Tracker</a>
+            </div>
+        </nav>
+    </header>
+
+    <div id="mainContent" class="container body-content" style="max-height: 100%;">
+        @RenderBody()
+    </div>
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/lib/jquery.mask/jquery.mask.min.js"></script>
+
+    <script src="~/lib/Inputmask-5.x/dist/inputmask.js" charset="utf-8"></script>
+    <script src="~/lib/Inputmask-5.x/dist/jquery.inputmask.js" charset="utf-8"></script>
+    <script src="~/lib/Inputmask-5.x/dist/bindings/inputmask.binding.js" charset="utf-8"></script>
+
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+
+    @await RenderSectionAsync("Scripts", required: false)
+
+</body>
+</html>

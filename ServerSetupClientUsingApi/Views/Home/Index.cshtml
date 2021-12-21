@@ -1,0 +1,57 @@
+﻿@{
+    ViewData["Title"] = "Server Setup Tracker";
+}
+
+
+
+<!-- Modal, adding server -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header" style="justify-content:center">
+                <h3 style="font-weight: bold">Add Server</h3><br />
+            </div>
+            <div class="modal-body">
+                <label>Hostname:</label><br />
+                <input id="host" type="text" maxlength="31" style="width:300px;" /><br />
+                <label>IP:</label><br />
+                <input id="ip" data-inputmask="'alias': 'ip'" /><br />
+                <label>Deadline:</label><br />
+                <input id="deadline" data-inputmask="'alias': 'datetime', 'inputFormat': 'mm/dd/yyyy'" /><br />
+                <label>Description</label><br />
+                <textarea id="desc" name="desc" rows="4" cols="40"></textarea>
+            </div>
+            <div class="modal-footer" style="justify-content:center">
+                <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="addServer()">Add Server</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="float-container">
+    <div class="float-container">
+        <div class="float-child1">
+            <label style="font-weight: bold; margin: 10px; margin-top: 20px">Server Tracker</label>&nbsp;&nbsp;&nbsp;&nbsp;<button type="button" class="btn btn-primary buttonClass btn-sm" data-toggle="modal" data-target="#exampleModal">&nbsp;&nbsp;&nbsp;&nbspAdd Server&nbsp;&nbsp;&nbsp;&nbsp</button>
+            <table class="table table-bordered table-hover table-sm" id="serverTable">
+                <thead class="table-primary" id="serverTableColumnHeaders">
+                    <tr>
+                        <th scope="col">Hostname</th>
+                        <th scope="col">IP</th>
+                        <th scope="col">Deadline</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="serverTableBody">
+                </tbody>
+            </table>
+        </div>
+        <div class="float-child2">
+            <h3 style="font-weight: bold">Overdue Servers</h3><br />
+            <div id="overdueServerList">
+            </div>
+
+        </div>
+    </div>
+</div>
