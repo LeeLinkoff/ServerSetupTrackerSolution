@@ -31,22 +31,32 @@ const serverData = {
 
 
 $(document).ready(function () {
+
+	$('#container').waitMe({
+		effect: 'bounce',
+		text: 'Please wait, loading servers ...',
+		bg: 'rgba(255, 255, 255, 0.7)',
+		color: '#000'
+    });
+
 	$.ajax({
 		url: "https://serversetuptrackerapi.azurewebsites.net/api/servers"
 	}).then(
 		function (data) {
-			serverData.data = JSON.parse(data);
+			populateServerDataFromApi(data);
 			refreshLoadMainList();
 			refreshLoadOverdueList();
 			$("#mainContent").height($("#mainContent").outerHeight() + 80);
+			$('#container').waitMe('hide');
 		})
+
 });
 
 
 
 
-function populateServerDataFromApi() {
-	
+function populateServerDataFromApi(data) {
+	serverData.data = JSON.parse(data);
 }
 
 
