@@ -53,10 +53,12 @@ function refreshLoadOverdueList() {
 			var today = new Date();
 			var serverDeadline = new Date(server.deadline);
 			var numOfDays = (today.getTime() - serverDeadline.getTime()) / (1000 * 3600 * 24);
-			var htmlRow1 = "<label class=\"label-overdue\">" + server.hostname + "</label><br />";
-			var htmlRow2 = "<label class=\"label-overdue\">" + server.ip + "</label><br />";
-			var htmlRow3 = "<label class=\"label-overdue\">" + Math.trunc(numOfDays) + " day(s) ago</label><br />";
-			$("#overdueServerList").append(htmlRow1 + htmlRow2 + htmlRow3 + "</br>");
+			if (numOfDays > 0) {
+				var htmlRow1 = "<label class=\"label-overdue\">" + server.hostname + "</label><br />";
+				var htmlRow2 = "<label class=\"label-overdue\">" + server.ip + "</label><br />";
+				var htmlRow3 = "<label class=\"label-overdue\">" + Math.trunc(numOfDays) + " day(s) ago</label><br />";
+				$("#overdueServerList").append(htmlRow1 + htmlRow2 + htmlRow3 + "</br>");
+			}
         }
 	}
 
