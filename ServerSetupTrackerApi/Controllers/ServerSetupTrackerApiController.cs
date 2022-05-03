@@ -24,7 +24,7 @@ namespace ServerSetupTrackerApi.Controllers
             // This is just a bare bones example of the endpoint of an API that would provide list of servers to be setup or have
             // been setup
             //
-            // Actual implementation would conist of:
+            // Actual implementation would consist of:
             // * Verbose error handling/checking
             // * Communication with a back-end service providing the data to this API endpoint
 

@@ -19,6 +19,4 @@
             this.setup = setup;
         }
     }
-
-   
 }
